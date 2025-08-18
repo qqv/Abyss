@@ -1,0 +1,94 @@
+/* 格式化JSON编辑器样式 */
+.formatted-json-editor-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.formatted-json-display,
+.formatted-json-textarea {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  tab-size: 4;
+}
+
+.formatted-json-display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border: none;
+  background: transparent;
+  color: #333;
+}
+
+.formatted-json-textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  background: transparent;
+  caret-color: #333; /* 光标颜色 */
+  resize: none;
+  z-index: 1;
+}
+
+/* 语法高亮颜色 */
+.json-key {
+  color: #0070f3; /* 蓝色 - 键名 */
+}
+
+.json-string {
+  color: #00a172; /* 绿色 - 字符串值 */
+}
+
+.json-number {
+  color: #ff8c00; /* 橙色 - 数值 */
+}
+
+.json-boolean {
+  color: #9333ea; /* 紫色 - 布尔值/null */
+}
+
+.json-variable {
+  color: #e11d48; /* 红色 - 参数化变量 {{var}} */
+}
+
+/* 暗色主题支持 */
+@media (prefers-color-scheme: dark) {
+  .formatted-json-display {
+    color: #e1e1e1;
+  }
+  
+  .formatted-json-textarea {
+    caret-color: #e1e1e1;
+  }
+  
+  .json-key {
+    color: #3b82f6; /* 蓝色 - 键名 */
+  }
+  
+  .json-string {
+    color: #10b981; /* 绿色 - 字符串值 */
+  }
+  
+  .json-number {
+    color: #f59e0b; /* 橙色 - 数值 */
+  }
+  
+  .json-boolean {
+    color: #a855f7; /* 紫色 - 布尔值/null */
+  }
+  
+  .json-variable {
+    color: #f43f5e; /* 红色 - 参数化变量 {{var}} */
+  }
+}

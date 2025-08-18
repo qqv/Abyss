@@ -1,0 +1,8 @@
+{
+  "enableApiLogs": false,
+  "enableProxyLogs": false,
+  "enableSystemLogs": false,
+  "logLevel": "info",
+  "retentionDays": 30,
+  "maxLogSize": 100
+}

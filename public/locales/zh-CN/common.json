@@ -1,0 +1,1033 @@
+{
+  "general": {
+    "title": "通用设置",
+    "subtitle": "配置语言、时区、超时等基础设置",
+    "localeSection": "语言和地区",
+    "language": "界面语言",
+    "timezone": "时区",
+    "systemBehavior": "系统行为",
+    "enableRequestLogging": "启用请求日志记录",
+    "enableRequestLogging.desc": "记录所有API请求的详细信息",
+    "collectionResultsStorage": "集合运行结果存储位置",
+    "collectionResultsStorage.desc": "选择集合运行结果的存储方式",
+    "storage": {
+      "browser": "浏览器存储",
+      "browser.desc": "存储在本地浏览器中，快速访问",
+      "database": "数据库存储",
+      "database.desc": "存储在MongoDB中，持久保存"
+    },
+    "autoUpdate": "自动检查更新",
+    "autoUpdate.desc": "自动检查并提示可用的更新"
+  },
+  "system": {
+    "title": "系统设置",
+    "subtitle": "配置平台的各项设置和偏好",
+    "tabs": {
+      "general": "通用设置",
+      "generalDesc": "语言、时区、超时等基础设置",
+      "logs": "日志管理",
+      "logsDesc": "API测试日志、代理池日志管理",
+      "autosave": "自动保存",
+      "autosaveDesc": "自动保存测试结果和历史记录",
+      "theme": "主题界面",
+      "themeDesc": "主题、字体、界面布局设置",
+      "data": "数据管理",
+      "dataDesc": "数据导入导出、备份恢复",
+      "advanced": "高级设置",
+      "advancedDesc": "代理、证书、性能优化设置"
+    }
+  },
+  "languages": {
+    "zhCN": "简体中文",
+    "en": "English"
+  },
+  "actions": {
+    "reset": "重置为默认",
+    "save": "保存设置",
+    "saving": "保存中...",
+    "create": "创建",
+    "run": "运行",
+    "edit": "编辑",
+    "copy": "复制",
+    "delete": "删除"
+  },
+  "dialog": {
+    "confirmDelete": "确认删除"
+  },
+  "sidebar": {
+    "expand": "展开侧边栏",
+    "collapse": "折叠侧边栏",
+    "searchPlaceholder": "搜索API或集合...",
+    "tabs": {
+      "collections": "集合",
+      "run": "运行"
+    },
+    "section": {
+      "collections": "集合",
+      "proxyPool": "代理池",
+      "apiTest": "API测试"
+    },
+    "collectionManage": "集合管理",
+    "noCollections": "没有集合",
+    "proxy": {
+      "manage": "代理管理",
+      "tunnel": "隧道管理"
+    },
+    "settings": "设置",
+    "runCollection": "运行集合",
+    "runHistory": "运行历史",
+    "dialog": {
+      "addCollectionTitle": "添加新集合",
+      "addCollectionDesc": "创建一个新的API集合来组织您的API测试。",
+      "name": "名称",
+      "namePlaceholder": "输入集合名称",
+      "create": "创建"
+    }
+  },
+  
+  "workspace": {
+    "tree": {
+      "refresh": "刷新集合"
+    },
+    "editor": {
+      "newRequest": "新建请求",
+      "headers": { "title": "请求头" },
+      "body": {
+        "form": {
+          "keyPlaceholder": "键名",
+          "valuePlaceholder": "键值",
+          "add": "添加表单项"
+        },
+        "urlencodedAdd": "添加URL编码项"
+      }
+    },
+    "import": {
+      "importCollection": "导入集合",
+      "importPostman": "导入Postman集合",
+      "errorTitle": "导入错误",
+      "pickFile": "选择集合文件",
+      "fileError": "文件格式错误",
+      "parseFailed": "无法解析Postman集合文件，请确保JSON格式正确",
+      "invalidPostman": "无效的Postman集合文件：缺少必要信息",
+      "successTitle": "导入成功",
+      "successDesc": "集合 \"{{name}}\" 已导入，包含 {{count}} 个请求",
+      "failedTitle": "导入失败",
+      "failedDesc": "无法导入Postman集合",
+      "postman": { "title": "导入Postman集合", "desc": "上传Postman导出的集合(.json)，导入至API工作区。" },
+      "selected": "已选择",
+      "importing": "导入中...",
+      "import": "导入"
+    },
+    "script": {
+      "assert": {
+        "equal": "等于",
+        "property": "包含属性",
+        "type": "类型检查",
+        "include": "包含",
+        "above": "大于",
+        "below": "小于"
+      }
+    }
+  },
+  "advanced": {
+    "title": "高级设置",
+    "subtitle": "配置代理、安全等高级选项",
+    "tabs": {
+      "proxy": "代理设置",
+      "security": "安全设置",
+      "performance": "性能优化",
+      "scripts": "脚本设置"
+    },
+    "proxy": {
+      "globalTitle": "全局代理配置",
+      "enableGlobal": "启用全局代理",
+      "enableGlobalDesc": "所有请求都将通过配置的代理服务器",
+      "type": "代理类型",
+      "host": "代理服务器",
+      "port": "端口",
+      "username": "用户名 (可选)",
+      "password": "密码 (可选)",
+      "bypass": "绕过列表",
+      "bypassDesc": "用逗号分隔多个地址，支持通配符 (*)"
+    },
+    "testing": "测试中...",
+    "testConnection": "测试连接",
+    "security": {
+      "sslTitle": "SSL/TLS 设置",
+      "enableSSL": "启用SSL证书验证",
+      "enableSSLDesc": "验证服务器SSL证书的有效性",
+      "allowSelfSigned": "允许自签名证书",
+      "allowSelfSignedDesc": "接受自签名的SSL证书",
+      "enablePinning": "启用证书固定",
+      "enablePinningDesc": "只信任指定的证书",
+      "enableHSTS": "启用HSTS",
+      "enableHSTSDesc": "HTTP Strict Transport Security",
+      "minimumTLS": "最低TLS版本",
+      "trustedDomains": "信任域名列表",
+      "trustedDomainsDesc": "对这些域名跳过严格的SSL验证",
+      "requestTitle": "请求安全",
+      "enableSigning": "启用请求签名",
+      "enableSigningDesc": "对请求进行数字签名验证"
+    },
+    "perf": {
+      "memoryCacheTitle": "内存和缓存",
+      "monitoringTitle": "性能监控",
+      "maxMemory": "最大内存使用 (MB)",
+      "cacheSize": "缓存大小 (MB)",
+      "enableRequestCache": "启用请求缓存",
+      "enableRequestCacheDesc": "缓存GET请求的响应数据",
+      "enableCompression": "启用响应压缩",
+      "enableCompressionDesc": "自动解压缩响应数据",
+      "connectionTitle": "连接设置",
+      "maxConcurrent": "最大并发连接数",
+      "poolSize": "连接池大小",
+      "memory": "内存使用",
+      "cache": "缓存使用",
+      "activeConnections": "活跃连接",
+      "totalRequests": "总请求数",
+      "errorCount": "错误数",
+      "lastUpdated": "最后更新",
+      "actions": {
+        "clearCache": "清理缓存",
+        "optimizeMemory": "优化内存",
+        "refresh": "刷新数据"
+      },
+      "toast": {
+        "clearCacheSuccessTitle": "缓存已清理",
+        "clearCacheSuccessDesc": "所有缓存数据已清空，系统性能已优化",
+        "clearCacheFailedTitle": "清理失败",
+        "clearCacheFailedDesc": "清理缓存时发生错误",
+        "optimizeSuccessTitle": "内存已优化",
+        "optimizeSuccessDesc": "垃圾回收已执行，内存使用已优化",
+        "optimizeFailedTitle": "优化失败",
+        "optimizeFailedDesc": "内存优化过程中发生错误"
+      }
+    },
+    "scripts": {
+      "executionTitle": "脚本执行",
+      "enablePreRequest": "启用前置脚本",
+      "enablePreRequestDesc": "请求发送前执行JavaScript脚本",
+      "enableTest": "启用测试脚本",
+      "enableTestDesc": "响应接收后执行测试脚本",
+      "timeout": "脚本超时时间 (秒)",
+      "sandboxTitle": "安全沙箱",
+      "allowFileSystem": "允许文件系统访问",
+      "allowFileSystemDesc": "脚本可以读写本地文件",
+      "allowNetwork": "允许网络访问",
+      "allowNetworkDesc": "脚本可以发起网络请求",
+      "enableConsole": "启用控制台日志",
+      "enableConsoleDesc": "脚本输出显示在控制台",
+      "templatesTitle": "脚本模板"
+    },
+    "toast": {
+      "savedTitle": "设置已保存",
+      "savedDesc": "高级设置已成功保存",
+      "saveFailedTitle": "保存失败",
+      "saveFailedDesc": "保存设置时发生错误，请重试",
+      "proxyTestSuccessTitle": "代理测试成功",
+      "proxyTestSuccessDesc": "代理服务器连接正常",
+      "proxyTestFailedTitle": "代理测试失败",
+      "proxyTestFailedDesc": "无法连接到代理服务器"
+    }
+  },
+  "autosave": {
+    "title": "自动保存设置",
+    "subtitle": "配置自动保存、历史记录和备份选项",
+    "storage": {
+      "title": "存储使用情况",
+      "usedLabel": "已使用存储空间",
+      "historyCount": "历史记录数量",
+      "backupCount": "备份文件数量"
+    },
+    "section": {
+      "title": "自动保存"
+    },
+    "enable": "启用自动保存",
+    "enableDesc": "自动保存工作区的更改",
+    "interval": "保存间隔 (分钟)",
+    "minutes": "{{m}} 分钟",
+    "data": {
+      "title": "数据保存选项",
+      "saveResults": "保存测试结果",
+      "saveResultsDesc": "自动保存API测试的结果和响应数据",
+      "saveHistory": "保存请求历史",
+      "saveHistoryDesc": "保存所有API请求的历史记录",
+      "backupCollections": "备份集合数据",
+      "backupCollectionsDesc": "定期备份API集合和配置数据"
+    },
+    "history": {
+      "title": "历史记录管理",
+      "retentionDays": "保留天数",
+      "maxEntries": "最大记录数",
+      "clear": "清理历史记录"
+    },
+    "backup": {
+      "title": "备份设置",
+      "enable": "启用定期备份",
+      "enableDesc": "定期自动创建数据备份",
+      "interval": "备份间隔 (小时)",
+      "hours": "{{h}} 小时",
+      "days": "{{d}} 天",
+      "maxFiles": "最大备份文件数",
+      "backing": "备份中...",
+      "now": "立即备份"
+    },
+    "toast": {
+      "savedTitle": "设置已保存",
+      "savedDesc": "自动保存设置已成功保存",
+      "saveFailedTitle": "保存失败",
+      "saveFailedDesc": "保存设置时发生错误，请重试",
+      "backupSuccessTitle": "备份成功",
+      "backupSuccessDesc": "数据已成功备份",
+      "backupFailedTitle": "备份失败",
+      "backupFailedDesc": "备份过程中发生错误",
+      "clearSuccessTitle": "清理成功",
+      "clearSuccessDesc": "历史记录已清理",
+      "clearFailedTitle": "清理失败",
+      "clearFailedDesc": "清理过程中发生错误"
+    }
+  },
+  "data": {
+    "title": "数据管理",
+    "subtitle": "导入导出数据、备份恢复和数据清理",
+    "all": "所有数据",
+    "selected": "选定数据",
+    "stats": {
+      "title": "数据统计",
+      "loading": "正在加载数据统计...",
+      "collections": "API集合",
+      "environments": "环境配置", 
+      "results": "测试结果",
+      "proxyConfigs": "代理配置",
+      "total": "总数据大小: "
+    },
+    "tabs": {
+      "export": "数据导出",
+      "cleanup": "数据清理"
+    },
+    "export": {
+      "title": "导出数据",
+      "progress": "导出进度",
+      "format": "导出格式",
+      "all": "导出所有数据",
+      "allDesc": "包含所有集合、环境、结果等",
+      "collections": "导出API集合",
+      "collectionsDesc": "仅导出API集合数据",
+      "environments": "导出环境配置",
+      "environmentsDesc": "仅导出环境变量",
+      "results": "导出测试结果",
+      "resultsDesc": "仅导出测试历史"
+    },
+    "cleanup": {
+      "title": "数据清理",
+      "warning": "数据清理操作不可撤销，请谨慎操作。建议在清理前先导出备份。",
+      "cache": "清理缓存",
+      "cacheDesc": "清理临时缓存数据",
+      "logs": "清理日志",
+      "logsDesc": "清理所有日志记录",
+      "history": "清理历史记录",
+      "historyDesc": "清理测试历史记录",
+      "all": "清理所有临时数据",
+      "allDesc": "清理缓存、日志和历史"
+    },
+    "toast": {
+      "statsFailedTitle": "获取数据统计失败",
+      "statsFailedDesc": "无法获取数据统计信息",
+      "exportSuccessTitle": "导出成功",
+      "exportSuccessDesc": "{{which}}已成功导出",
+      "exportFailedTitle": "导出失败",
+      "exportFailedDesc": "导出过程中发生错误，请重试",
+      "clearSuccessTitle": "清理成功",
+      "clearFailedTitle": "清理失败",
+      "clearFailedDesc": "清理过程中发生错误",
+      "cleared": "数据已清理",
+      "cacheCleared": "缓存数据已清理",
+      "logsCleared": "日志数据已清理",
+      "historyCleared": "历史记录已清理",
+      "allCleared": "所有临时数据已清理"
+    }
+  },
+  "logs": {
+    "title": "日志管理",
+    "subtitle": "查看、管理和配置系统日志",
+    "tabs": { "view": "查看日志", "settings": "日志设置" },
+    "searchPlaceholder": "搜索日志...",
+    "level": { "all": "所有级别", "error": "错误", "warn": "警告", "info": "信息", "debug": "调试" },
+    "category": { "all": "所有类别", "proxy": "代理", "system": "系统" },
+    "export": "导出",
+    "clear": "清理",
+    "records": "日志记录 ({{count}})",
+    "refresh": "刷新",
+    "noMatch": "没有找到匹配的日志记录",
+    "settings": {
+      "title": "日志记录设置",
+      "api": "API请求日志",
+      "apiDesc": "记录所有API请求和响应",
+      "proxy": "代理池日志",
+      "proxyDesc": "记录代理池操作和状态",
+      "system": "系统日志",
+      "systemDesc": "记录系统操作和错误"
+    },
+    "config": {
+      "title": "日志配置",
+      "level": "日志级别",
+      "retention": "保留天数",
+      "maxSize": "最大日志文件大小 (MB)"
+    },
+    "toast": {
+      "exportSuccessTitle": "导出成功",
+      "exportSuccessDesc": "日志已成功导出",
+      "exportFailedTitle": "导出失败",
+      "exportFailedDesc": "导出日志时发生错误",
+      "clearSuccessTitle": "清理成功",
+      "clearSuccessDesc": "所有日志已清理",
+      "clearFailedTitle": "清理失败",
+      "clearFailedDesc": "清理日志时发生错误"
+    }
+  },
+  "theme": {
+    "title": "主题和界面",
+    "subtitle": "自定义界面外观和交互体验",
+    "mode": { "title": "主题模式" },
+    "font": {
+      "title": "字体设置",
+      "size": "字体大小",
+      "small": "小 (12px)",
+      "medium": "中 (16px)",
+      "large": "大 (20px)",
+      "preview": "预览文本：这是当前字体大小的示例文本 (Sample text in current font size)"
+    },
+  "auth": {
+    "selectType": "选择认证类型",
+    "type": {
+      "none": "无认证",
+      "basic": "Basic Auth",
+      "apikey": "API Key",
+      "bearer": "Bearer Token",
+      "oauth2": "OAuth 2.0"
+    },
+  "workspace": {
+    "tree": {
+      "edit": "编辑",
+      "delete": "删除",
+      "newFolder": "新建文件夹",
+      "newRequest": "新建请求",
+      "editCollection": "编辑集合",
+      "exportSuccess": "导出成功",
+      "exportPostmanDesc": "集合 \"{{name}}\" 已导出为Postman格式",
+      "exportJson": "导出为JSON",
+      "exportZipDesc": "集合 \"{{name}}\" 已导出为ZIP文件",
+      "exportZip": "导出为ZIP文件",
+      "deleteCollection": "删除集合",
+      "empty": "集合为空，添加请求或文件夹开始使用",
+      "searchPlaceholder": "搜索集合和请求...",
+      "collection": "集合",
+      "noCollections": "没有找到API集合",
+      "createCollection": "创建集合",
+      "deleteFolder": "删除文件夹",
+      "deleteRequest": "删除请求",
+      "confirmDeleteCollection": "确定要删除集合 \"{{name}}\" 吗？这将删除所有关联的请求和文件夹。",
+      "confirmDeleteFolder": "确定要删除文件夹 \"{{name}}\" 吗？这将删除所有内部请求和子文件夹。",
+      "confirmDeleteRequest": "确定要删除请求 \"{{name}}\" 吗？此操作无法撤销。",
+      "confirmDeleteGeneric": "确定要删除此项吗？此操作无法撤销。"
+    },
+  "apiTesting": {
+    "title": "API 集合运行",
+    "actions": {
+      "refresh": "刷新集合",
+      "running": "正在运行...",
+      "runCollection": "运行集合",
+      "refreshList": "刷新列表",
+      "run": "运行",
+      "clearHistory": "清理历史"
+    },
+    "tabs": { "collections": "集合列表", "history": "运行历史" },
+    "empty": { "noCollections": "没有可用的API集合", "noHistory": "没有运行历史记录" },
+    "progress": {
+      "preparing": "准备运行...",
+      "running": "运行中...",
+      "runningCollection": "正在运行集合...",
+      "current": "当前请求",
+      "completed": "完成",
+      "log": "运行进度: {{pct}}% ({{completed}}/{{total}})"
+    },
+    "results": {
+      "recent": "最近运行结果",
+      "history": "运行历史",
+      "success": "已完成",
+      "failed": "失败",
+      "total": "总计"
+    },
+    "history": { "records": "条记录，占用" },
+    "toast": {
+      "loadFailedTitle": "加载失败",
+      "loadFailedDesc": "无法加载 API 集合，请稍后重试。",
+      "error": "错误",
+      "selectCollection": "请先选择一个集合",
+      "runFailed": "运行失败",
+      "noCollection": "没有选择集合",
+      "runCompleted": "集合运行完成",
+      "runCompletedDesc": "{{name}} 已成功运行",
+      "runError": "运行集合时发生错误"
+    },
+    "load": { "error": "加载集合失败，请稍后重试", "errorLog": "加载集合错误:" },
+    "run": { "errorLog": "运行集合错误:" },
+    "request": {
+      "namePlaceholder": "我的API请求",
+      "method": "请求方法",
+      "selectMethod": "选择方法",
+      "url": "请求URL",
+      "urlPlaceholder": "https://api.example.com/endpoint",
+      "bodyType": "请求体类型",
+      "body": { "none": "无", "form": "表单数据" },
+      "selectContentType": "选择内容类型",
+      "formData": "表单数据",
+      "addField": "添加字段",
+      "fieldName": "字段名",
+      "fieldValue": "字段值",
+      "urlencoded": "URL编码参数",
+      "contentType": { "plainText": "纯文本" },
+      "tests": { "defaultName": "默认测试", "autoName": "测试 {{n}}" },
+      "validation": {
+        "nameRequired": "请求名称不能为空",
+        "methodRequired": "请求方法不能为空",
+        "urlRequired": "URL不能为空"
+      },
+      "create": "创建请求",
+      "update": "更新请求",
+      "edit": "编辑请求",
+      "confirmDelete": "您确定要删除该请求吗？此操作无法恢复。"
+    },
+    "collections": {
+      "newSubfolder": "新建子文件夹",
+      "deleteFolder": "删除文件夹",
+      "emptyFolder": "文件夹为空，创建新请求或子文件夹",
+      "renameFolder": "重命名文件夹",
+      "folderName": "文件夹名称",
+      "folderNamePlaceholder": "输入文件夹名称"
+    }
+  },
+  "proxyPool": {
+    "title": "代理池管理",  
+    "load": { "errorLog": "加载代理数据失败:" },
+    "testing": { "progress": "测试中 ({{c}}/{{t}})" },
+    "actions": {
+      "testProxy": "测试代理",
+      "testAll": "测试所有代理",
+      "testSelected": "测试选中代理 ({{count}})",
+      "testInvalid": "测试无效代理"
+    },
+    "tabs": { "proxies": "代理列表", "tunnels": "隧道管理", "settings": "设置", "addProxy": "添加代理", "bulkImport": "批量导入" },
+    "alert": {
+      "deleteInvalidId": "删除失败：无效的ID",
+      "deleteFailed": "删除代理失败: {{status}}",
+      "deleteError": "删除代理出错，请检查网络连接或服务器状态",
+      "batchDeleteInvalid": "批量删除失败：无效的ID列表",
+      "batchDeleteFailed": "批量删除失败: {{msg}}",
+      "batchDeleteError": "批量删除出错，请检查网络连接或服务器状态",
+      "selectProxies": "请先选择要测试的代理",
+      "noInvalid": "没有无效的代理需要测试",
+      "testStartFailed": "启动代理测试失败",
+      "testError": "测试代理失败，请检查网络连接或服务器状态",
+      "saveSuccess": "设置保存成功！",
+      "saveFailed": "设置保存失败，请重试",
+      "saveFailedWithMsg": "设置保存失败: {{msg}}"
+    },
+    "test": {
+      "all": "所有代理",
+      "selected": "选中的{{count}}个代理",
+      "invalid": "无效的{{count}}个代理",
+      "start": "开始测试{{desc}}..."
+    },
+    "external": {
+      "loadFailed": "无法加载外部源: {{msg}}",
+      "errorLog": "加载外部代理源失败:",
+      "loadError": "加载外部代理源失败: {{msg}}"
+    },
+    "bulk": {
+      "title": "批量导入代理",
+      "fromExternal": "从外部源导入",
+      "urlPlaceholder": "输入代理列表的网址链接，如 https://raw.githubusercontent.com/...",
+      "loadList": "加载列表",
+      "example": "例如：https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt",
+      "defaultProtocol": "默认协议",
+      "defaultProtocolTip": "用于没有明确指定协议的地址",
+      "list": "代理地址列表",
+      "textPlaceholder": "请输入代理地址，每行一个。支持格式：\nhost:port（将使用上方选择的默认协议）\nhost:port:country（忽略国家信息）\nhttp://host:port\nhttp://username:password@host:port\nhost:port:protocol\nhost:port:protocol:username:password",
+      "supported": "支持的格式：",
+      "support1": "host:port (使用默认协议)",
+      "support2": "host:port:country (忽略国家信息)",
+      "importing": "正在导入...",
+      "importResult": "导入完成! 成功: {{s}}, 失败: {{f}}"
+    },
+    "common": { "loading": "加载中...", "unknown": "未知" },
+    "settings": {
+      "statusTitle": "代理池状态",
+      "total": "总代理数",
+      "active": "活跃代理数",
+      "valid": "有效代理数",
+      "avgResponse": "平均响应时间",
+      "verify": {
+        "title": "代理验证设置",
+        "startup": "启动时检测代理",
+        "startupDesc": "程序启动时自动检测所有代理的可用性"
+      },
+      "health": {
+        "enable": "启用代理健康检查",
+        "enableDesc": "定期检查代理的可用性状态",
+        "interval": "健康检查间隔 (分钟)",
+        "intervalDesc": "检查代理健康状态的时间间隔 (1-1440分钟)",
+        "maxFailures": "最大失败次数",
+        "maxFailuresDesc": "代理失败次数达到此值后将被移除 (1-100)"
+      },
+      "performance": {
+        "title": "性能设置",
+        "connectionTimeout": "连接超时时间 (毫秒)",
+        "connectionTimeoutDesc": "连接代理的超时时间 (1000-60000毫秒)",
+        "requestTimeout": "请求超时时间 (毫秒)",
+        "requestTimeoutDesc": "请求代理的超时时间 (1000-60000毫秒)",
+        "maxConcurrentChecks": "最大并发检查数",
+        "maxConcurrentChecksDesc": "最大并发检查代理的数量 (1-100)"
+      },
+      "logging": {
+        "title": "日志和监控",
+        "enableDetailed": "启用详细日志",
+        "enableDetailedDesc": "记录代理测试和使用的详细日志"
+      }
+    }
+    ,
+    "list": {
+      "refresh": "刷新",
+      "neverChecked": "从未检查",
+      "untested": "未测试",
+      "valid": "有效",
+      "invalid": "无效",
+      "searchPlaceholder": "搜索代理...",
+      "protocol": "协议",
+      "allProtocols": "所有协议",
+      "status": "状态",
+      "allStatus": "所有状态",
+      "active": "已启用",
+      "inactive": "已禁用",
+      "perPage": "{{n}} 条/页",
+      "showing": "显示 {{from}}-{{to}} / 共 {{total}} 个代理",
+      "filtered": "(从 {{n}} 个中筛选)",
+      "selectedCount": "已选择 {{n}} 个代理",
+      "selectCurrentPage": "全选当前页",
+      "unselectCurrentPage": "取消选中当前页",
+      "deleteSelected": "删除选中",
+      "cleanupInvalid": "清理无效代理",
+      "cleanupInvalidTip": "删除所有标记为无效的代理",
+      "col": {
+        "protocol": "协议",
+        "address": "代理地址",
+        "credentials": "登录凭据",
+        "status": "状态",
+        "latency": "延时",
+        "lastChecked": "上次检查",
+        "active": "启用",
+        "actions": "操作"
+      },
+      "noPassword": "(无密码)",
+      "noCredentials": "无凭据",
+      "noMatch": "没有找到匹配的代理",
+      "empty": "暂无代理服务器，请添加新代理",
+      "prev": "上一页",
+      "next": "下一页",
+      "pageInfo": "第 {{cur}} 页，共 {{total}} 页"
+    },
+    "tunnel": {
+      "loadFailed": "加载隧道数据失败",
+      "tip": "提示",
+      "fillNameAndSelect": "请填写隧道名称并选择至少一个代理",
+      "updateSuccess": "隧道更新成功",
+      "createSuccess": "隧道创建成功",
+      "updateFailed": "更新隧道失败",
+      "createFailed": "创建隧道失败",
+      "deleteSuccess": "隧道删除成功",
+      "deleteFailed": "删除隧道失败",
+      "toggleFailed": "切换隧道状态失败",
+      "activated": "隧道已激活",
+      "deactivated": "隧道已停用",
+      "create": "创建隧道",
+      "edit": "编辑隧道",
+      "createNew": "创建新隧道",
+      "delete": "删除隧道",
+      "activate": "激活隧道",
+      "deactivate": "停用隧道",
+      "desc": "配置代理隧道的基本信息和高级选项",
+      "name": "隧道名称",
+      "namePlaceholder": "输入隧道名称",
+      "taskId": "关联任务ID（可选）",
+      "taskIdPlaceholder": "输入关联的任务ID",
+      "rotation": {
+        "title": "轮换配置",
+        "type": "轮换类型",
+        "selectType": "选择轮换类型",
+        "sequential": "顺序轮换",
+        "random": "随机轮换",
+        "failover": "故障转移",
+        "interval": "轮换间隔（秒）",
+        "max": "最大轮换次数（0=无限制）",
+        "validity": "有效时间（小时，0=无限制）"
+      },
+      "concurrent": {
+        "title": "并发和重试配置",
+        "max": "最大并发请求数",
+        "retry": "重试次数"
+      },
+      "selectProxies": "选择代理（{{n}} 个已选择）",
+      "selectAll": "全选",
+      "unselectAll": "取消全选",
+      "viewProxies": "查看代理",
+      "active": "活跃",
+      "inactive": "未使用",
+      "linkedTask": "关联任务",
+      "createdAt": "创建于",
+      "empty": "暂无隧道，请创建新的隧道",
+      "proxyDetails": "代理详情",
+      "proxyList": "代理列表",
+      "col": {
+        "name": "隧道名称",
+        "proxies": "代理",
+        "count": "数量",
+        "rotation": "轮换类型",
+        "status": "状态",
+        "updatedAt": "更新时间",
+        "actions": "操作"
+      }
+    }
+  },
+    "editor": {
+      "method": "方法",
+      "urlPlaceholder": "输入请求URL",
+      "send": "发送",
+      "save": "保存",
+      "tabs": { "params": "参数", "headers": "头部", "body": "请求体", "auth": "认证", "scripts": "脚本" },
+      "params": {
+        "title": "查询参数",
+        "tableMode": "表格模式",
+        "bulkEdit": "批量编辑",
+        "applyAndReturn": "应用变更并返回表格",
+        "add": "添加参数",
+        "keyPlaceholder": "参数名",
+        "valuePlaceholder": "参数值",
+        "bulkHelp1": "每行一个查询参数，格式为：",
+        "or": "或",
+        "bulkHelp2": "例如：",
+        "bulkPlaceholder": "id=123\nsort=desc\nfilter=active\npage=1"
+      },
+      "headers": {
+        "tableMode": "表格模式",
+        "bulkEdit": "批量编辑",
+        "applyAndReturn": "应用变更并返回表格",
+        "add": "添加头部",
+        "keyPlaceholder": "头部名",
+        "valuePlaceholder": "头部值",
+        "bulkHelp1": "每行一个请求头，格式为：",
+        "bulkHelp2": "例如：",
+        "bulkPlaceholder": "Content-Type: application/json\nAccept: application/json\nAuthorization: Bearer token"
+      },
+      "common": { "enabled": "启用", "key": "键", "value": "值" },
+      "body": {
+        "urlencoded": "URL编码",
+        "binary": "二进制",
+        "contentType": "内容类型",
+        "jsonPlaceholder": "请输入JSON格式的请求体内容",
+        "rawPlaceholder": "请求体内容",
+        "uploadBinary": "上传二进制文件",
+        "chooseFile": "选择文件"
+      },
+      "applyChanges": "应用更改",
+      "auth": {
+        "debugTitle": "认证状态调试信息",
+        "currentType": "当前认证类型:",
+        "enabled": "是否已启用:",
+        "none": "无",
+        "yes": "是",
+        "no": "否",
+        "set": "已设置",
+        "unset": "未设置"
+    }
+    },
+  
+  "workspace": {
+    "script": {
+      "tests": {
+        "enable": "启用"
+      }
+    }
+  },
+    "response": {
+      "actions": { "cancel": "取消请求", "save": "保存响应" },
+      "loading": { "processingScripts": "正在处理测试脚本...", "sending": "正在发送请求..." },
+      "empty": "发送请求后将在此显示响应",
+      "tabs": { "body": "Body", "headers": "Headers", "cookies": "Cookies", "timeline": "Timeline", "script": "Script" },
+      "headers": { "name": "名称", "value": "值", "empty": "没有响应头信息" },
+      "cookies": { "name": "名称", "value": "值", "attributes": "属性", "empty": "没有Cookie信息" },
+      "timeline": {
+        "title": "请求耗时分析",
+        "total": "总耗时",
+        "tip": "注: 请将鼠标悬停在各个色块上查看详细时间。\"等待响应\"的时间通常占据最大部分。",
+        "chart": "耗时分布图",
+        "network": "网络耗时",
+        "serverTime": "服务器时间",
+        "dns": "DNS查询",
+        "tcp": "TCP连接",
+        "tls": "TLS握手",
+        "request": "请求发送",
+        "server": "服务器处理",
+        "download": "响应下载",
+        "wait": "等待响应"
+      },
+      "tests": {
+        "title": "测试脚本验证",
+        "subtitle": "运行测试脚本以验证响应内容",
+        "allPassed": "所有测试通过",
+        "failed": "测试断言未满足",
+        "disabled": "已禁用",
+        "run": "运行测试",
+        "passed": "测试通过",
+        "assertionFailed": "断言未满足",
+        "notRun": "尚未运行",
+        "running": "正在运行...",
+        "runAll": "运行所有测试",
+        "empty": "没有可用的测试脚本",
+        "hint": "在请求编辑器中添加测试脚本以验证响应"
+      },
+      "status": {
+        "cors": "跨域请求限制",
+        "timeout": "请求超时",
+        "network": "网络错误",
+        "unknown": "未知错误"
+      }
+    },
+    "toast": {
+      "loadCollectionsFailed": "加载API集合失败:",
+      "saveFailed": "保存失败",
+      "chooseCollection": "请先选择要保存到的集合",
+      "requestNameRequired": "请求必须有名称才能保存",
+      "requestCancelled": "请求已取消",
+      "requestCancelledDesc": "请求已被用户取消",
+      "requestSent": "请求已发送",
+      "status": "状态码",
+      "requestFailed": "请求失败",
+      "requestError": "发送请求时出错",
+      "cannotCreateRequest": "无法创建请求"
+    },
+    "empty": {
+      "noOpenRequest": "没有打开的请求",
+      "hint": "从左侧集合中选择一个请求，或创建新请求"
+    },
+    "script": {
+      "examples": {
+        "writeHere": "在此编写测试代码",
+        "statusCheck": "状态码检查",
+        "title": "示例代码:"
+      },
+      "tabs": { "preRequest": "预请求脚本", "tests": "测试脚本" },
+      "pre": {
+        "enable": "启用预请求脚本",
+        "helpTitle": "预请求脚本帮助",
+        "helpDesc": "预请求脚本在请求发送前执行，可用于动态设置请求参数和执行认证流程",
+        "usageTitle": "预请求脚本在请求发送前执行，可用于：",
+        "usage": {
+          "item1": "动态设置请求参数、头部或请求体",
+          "item2": "生成随机数据或时间戳",
+          "item3": "执行复杂的认证流程",
+          "item4": "从其他请求中提取数据"
+        },
+        "placeholder": "// 在此处编写预请求脚本"
+      },
+      "tests": {
+        "helpTitle": "测试脚本帮助",
+        "helpDesc": "测试脚本在响应收到后执行，用于验证响应数据和执行断言测试",
+        "usageTitle": "测试脚本在响应收到后执行，可用于：",
+        "usage": {
+          "item1": "验证响应状态码、正文和头部",
+          "item2": "从响应中提取数据并保存为变量",
+          "item3": "验证响应时间和性能",
+          "item4": "执行断言和测试"
+        },
+        "assertionsTitle": "常用断言:",
+        "add": "添加测试",
+        "empty": "没有测试脚本",
+        "namePlaceholder": "测试名称",
+        "nameTitle": "测试名称",
+        "placeholder": "// 在此处编写测试代码"
+      },
+      "help": "帮助",
+      "commonApi": "常用API:",
+      "api": {
+        "setVar": "设置变量",
+        "addHeader": "添加请求头",
+        "modifyBody": "修改请求体",
+        "timestamp": "获取当前时间戳",
+        "createTest": "创建测试",
+        "checkStatus": "验证状态码",
+        "getJson": "获取JSON响应",
+        "createExpect": "创建断言"
+      }
+    }
+  },
+    "enable": "启用认证",
+    "title": {
+      "basic": "基本认证 (Basic Auth)",
+      "apikey": "API Key 认证",
+      "bearer": "Bearer Token 认证",
+      "oauth2": "OAuth 2.0 认证"
+    },
+    "desc": {
+      "basic": "使用用户名和密码进行HTTP基本认证",
+      "apikey": "使用API密钥进行认证，可添加到请求头或URL中",
+      "bearer": "使用Bearer令牌进行认证，通常是JWT格式",
+      "oauth2": "OAuth 2.0授权框架提供特定的授权流程"
+    },
+    "basic": {
+      "username": "用户名",
+      "usernamePlaceholder": "输入用户名",
+      "password": "密码",
+      "passwordPlaceholder": "输入密码"
+    },
+    "apikey": {
+      "name": "Key名称",
+      "namePlaceholder": "如 X-API-Key 或 api_key",
+      "value": "Key值",
+      "valuePlaceholder": "输入API Key",
+      "addTo": "添加到",
+      "addToPlaceholder": "选择添加位置",
+      "header": "Header (请求头)",
+      "query": "Query (URL查询参数)"
+    },
+    "bearer": {
+      "token": "Token",
+      "tokenPlaceholder": "输入Bearer Token",
+      "tip": "请输入不带 \"Bearer \" 前缀的令牌，系统会自动添加"
+    },
+    "oauth": {
+      "tabs": { "config": "配置", "token": "令牌" },
+      "tokenUrl": "令牌URL",
+      "authUrl": "授权URL",
+      "clientId": "客户端ID",
+      "clientIdPlaceholder": "输入Client ID",
+      "clientSecret": "客户端Secret",
+      "clientSecretPlaceholder": "输入Client Secret",
+      "scope": "作用域 (Scope)",
+      "scopePlaceholder": "用空格分隔多个作用域，如：read write",
+      "accessToken": "访问令牌",
+      "accessTokenPlaceholder": "输入Access Token",
+      "refreshToken": "刷新令牌",
+      "refreshTokenPlaceholder": "输入Refresh Token"
+    },
+    "noneHint": "请选择认证类型以配置API认证"
+  },
+    "layout": {
+      "title": "界面布局",
+      "density": "界面密度",
+      "sidebarWidth": "侧边栏宽度",
+      "narrow": "窄 (200px)",
+      "standard": "标准 (256px)",
+      "wide": "宽 (400px)"
+    },
+    "interaction": {
+      "title": "交互设置",
+      "animations": "启用动画效果",
+      "animationsDesc": "界面过渡和动画效果",
+      "sounds": "启用音效",
+      "soundsDesc": "集合运行完成后发出音效"
+    },
+    "editor": {
+      "title": "编辑器设置",
+      "lineNumbers": "显示行号",
+      "lineNumbersDesc": "在代码编辑器中显示行号",
+      "wordWrap": "自动换行",
+      "wordWrapDesc": "长行自动换行显示",
+      "highlightLine": "高亮当前行",
+      "highlightLineDesc": "高亮显示光标所在行"
+    },
+    "toast": {
+      "savedTitle": "设置已保存",
+      "savedDesc": "主题设置已成功保存并应用",
+      "saveFailedTitle": "保存失败",
+      "saveFailedDesc": "保存设置时发生错误，请重试"
+    }
+  },
+  "proxy": {
+    "title": "代理池管理",
+    "subtitle": "管理、测试和配置用于API请求的代理服务器",
+    "tabs": {
+      "list": "代理列表",
+      "add": "添加代理",
+      "batch": "批量导入",
+      "settings": "代理池设置"
+    },
+    "loading": "加载中...",
+    "available": "可用代理 ({{count}})",
+    "testing": "测试中...",
+    "testAll": "测试所有代理",
+    "noProxies": "还没有添加任何代理",
+    "addTitle": "添加新代理",
+    "addSubtitle": "添加一个新的代理服务器到代理池",
+    "form": {
+      "protocol": "代理协议 *",
+      "selectProtocol": "选择协议",
+      "host": "主机地址 *",
+      "port": "端口 *",
+      "username": "用户名 (可选)",
+      "password": "密码 (可选)"
+    },
+    "batchTitle": "批量导入代理",
+    "batchSubtitle": "一次性添加多个代理服务器到代理池",
+    "batchFormats": "支持的格式 (每行一个代理)",
+    "batchList": "代理列表",
+    "batchPlaceholder": "输入代理列表，每行一个",
+    "importing": "导入中...",
+    "configLoadFailed": "无法加载配置",
+    "configTitle": "代理池配置",
+    "configSubtitle": "自定义代理池的行为和设置",
+    "selectionMode": "代理选择模式",
+    "selectMode": "选择模式",
+    "selectionModeDesc": "决定如何从可用代理中选择一个",
+    "mode": {
+      "random": "随机选择",
+      "roundRobin": "轮询选择",
+      "fastest": "最快优先"
+    },
+    "autoRotate": "自动轮换间隔 (秒)",
+    "autoRotateDesc": "设置为0禁用自动轮换，否则每隔指定秒数自动切换代理",
+    "checkOnStartup": "启动时测试代理",
+    "checkOnStartupDesc": "应用启动时自动测试所有代理",
+    "validateOnFailure": "失败时验证",
+    "validateOnFailureDesc": "当代理请求失败时自动验证代理有效性",
+    "maxFailures": "最大失败次数",
+    "maxFailuresDesc": "代理达到此失败次数后将被自动禁用",
+    "toast": {
+      "fetchFailedTitle": "获取代理失败",
+      "fetchFailedDesc": "无法获取代理列表",
+      "configFetchFailedTitle": "获取配置失败",
+      "configFetchFailedDesc": "无法获取代理池配置",
+      "invalidInput": "无效的输入",
+      "enterAtLeastOne": "请输入至少一个代理",
+      "testStarted": "测试已启动",
+      "testStartedDesc": "开始测试 {{count}} 个代理，这可能需要一些时间",
+      "testFailed": "测试失败",
+      "testFailedDesc": "测试代理时发生错误",
+      "missingRequired": "缺少必填信息",
+      "hostPortRequired": "代理主机和端口是必填项",
+      "addSuccess": "添加成功",
+      "addSuccessDesc": "代理 {{host}}:{{port}} 已添加",
+      "addFailed": "添加失败",
+      "addFailedDesc": "添加代理时发生错误",
+      "deleteSuccess": "删除成功",
+      "deleteSuccessDesc": "代理已成功删除",
+      "deleteFailed": "删除失败",
+      "deleteFailedDesc": "删除代理时发生错误",
+      "updateSuccess": "更新成功",
+      "updateSuccessDesc": "代理池配置已更新",
+      "updateFailed": "更新失败",
+      "updateFailedDesc": "更新配置时发生错误"
+    }
+  }
+}
+
+

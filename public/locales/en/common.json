@@ -1,0 +1,1051 @@
+{
+  "general": {
+    "title": "General Settings",
+    "subtitle": "Configure language, timezone, timeout and basics",
+    "localeSection": "Language & Region",
+    "language": "Language",
+    "timezone": "Timezone",
+    "systemBehavior": "System Behavior",
+    "enableRequestLogging": "Enable request logging",
+    "enableRequestLogging.desc": "Record detailed information for all API requests",
+    "collectionResultsStorage": "Collection Results Storage Location",
+    "collectionResultsStorage.desc": "Choose where to store collection run results",
+    "storage": {
+      "browser": "Browser Storage",
+      "browser.desc": "Store in local browser for fast access",
+      "database": "Database Storage",
+      "database.desc": "Store in MongoDB for persistence"
+    },
+    "autoUpdate": "Auto update checks",
+    "autoUpdate.desc": "Automatically check and prompt for available updates"
+  },
+  "apiTesting": {
+    "title": "API Collection Run",
+    "actions": {
+      "refresh": "Refresh collections",
+      "running": "Running...",
+      "runCollection": "Run collection",
+      "refreshList": "Refresh list",
+      "run": "Run",
+      "clearHistory": "Clear history"
+    },
+    "tabs": { "collections": "Collections", "history": "History" },
+    "empty": { "noCollections": "No API collections", "noHistory": "No run history" },
+    "progress": {
+      "preparing": "Preparing...",
+      "running": "Running...",
+      "runningCollection": "Running collection...",
+      "current": "Current",
+      "completed": "completed",
+      "log": "Progress: {{pct}}% ({{completed}}/{{total}})"
+    },
+    "results": {
+      "recent": "Recent results",
+      "history": "Run history",
+      "success": "Success",
+      "failed": "Failed",
+      "total": "Total"
+    },
+    "history": { "records": "records, using" },
+    "toast": {
+      "loadFailedTitle": "Load failed",
+      "loadFailedDesc": "Unable to load API collections. Please try again later.",
+      "error": "Error",
+      "selectCollection": "Please select a collection first",
+      "runFailed": "Run failed",
+      "noCollection": "No collection selected",
+      "runCompleted": "Run completed",
+      "runCompletedDesc": "{{name}} has been run successfully",
+      "runError": "An error occurred while running the collection"
+    },
+    "load": { "error": "Failed to load collections. Please try again later.", "errorLog": "Load collections error:" },
+    "run": { "errorLog": "Run collection error:" },
+    "request": {
+      "namePlaceholder": "My API request",
+      "method": "Method",
+      "selectMethod": "Select method",
+      "url": "Request URL",
+      "urlPlaceholder": "https://api.example.com/endpoint",
+      "bodyType": "Body Type",
+      "body": { "none": "None", "form": "Form Data" },
+      "selectContentType": "Select content type",
+      "formData": "Form Data",
+      "addField": "Add field",
+      "fieldName": "Field Name",
+      "fieldValue": "Field Value",
+      "urlencoded": "URL Encoded Params",
+        "contentType": { "plainText": "Plain Text" },
+        "tests": { "defaultName": "Default Test", "autoName": "Test {{n}}" },
+        "validation": {
+          "nameRequired": "Request name is required",
+          "methodRequired": "Request method is required",
+          "urlRequired": "URL is required"
+        },
+      "create": "Create Request",
+      "update": "Update Request",
+      "edit": "Edit Request",
+      "confirmDelete": "Are you sure to delete this request? This action cannot be undone."
+    },
+    "collections": {
+      "fetchFailed": "Failed to fetch collections: {{status}}",
+      "fetchLog": "Fetched collections:",
+      "createFailed": "Failed to create collection",
+      "createSuccessTitle": "Success",
+      "createSuccessDesc": "Collection created",
+      "createErrorLog": "Create collection error:",
+      "error": "Error",
+      "createFailedWithMsg": "Failed to create collection: {{msg}}",
+      "searchPlaceholder": "Search collections and requests...",
+      "import": "Import Collection",
+      "new": "New",
+      "expand": "Expand collections",
+      "collapse": "Collapse collections",
+      "exampleRequest": "Example request",
+      "noMatch": "No matching collections",
+      "createFirst": "Create the first collection",
+      "createDialogTitle": "Create New Collection",
+      "title": "API Collections",
+      "subtitle": "Manage your API request collections",
+      "deleteCollection": "Delete Collection",
+      "editCollection": "Edit Collection",
+      "runRequestLog": "Run request:",
+      "deleteRequest": "Delete Request",
+      "noRequests": "This collection has no requests. Click + to add one.",
+      "noCollectionsTip": "No collections yet. Click \"New\" to create one.",
+      "desc": "Description",
+      "descPlaceholder": "Enter description (optional)",
+      "createRequestTitle": "New Request",
+      "newSubfolder": "New Subfolder",
+      "deleteFolder": "Delete Folder",
+      "emptyFolder": "Folder is empty. Create a request or subfolder.",
+      "renameFolder": "Rename Folder",
+      "folderName": "Folder Name",
+      "folderNamePlaceholder": "Enter folder name"
+    }
+  },
+  "proxyPool": {
+    "title": "Proxy Pool Management",
+    "load": { "errorLog": "Failed to load proxy data:" },
+    "testing": { "progress": "Testing ({{c}}/{{t}})" },
+    "actions": {
+      "testProxy": "Test proxies",
+      "testAll": "Test all",
+      "testSelected": "Test selected ({{count}})",
+      "testInvalid": "Test invalid"
+    },
+    "tabs": { "proxies": "Proxies", "tunnels": "Tunnels", "settings": "Settings", "addProxy": "Add proxy", "bulkImport": "Bulk import" },
+    "alert": {
+      "deleteInvalidId": "Delete failed: invalid ID",
+      "deleteFailed": "Delete failed: {{status}}",
+      "deleteError": "Delete error, please check network/server",
+      "batchDeleteInvalid": "Batch delete failed: invalid IDs",
+      "batchDeleteFailed": "Batch delete failed: {{msg}}",
+      "batchDeleteError": "Batch delete error, please check network/server",
+      "selectProxies": "Select proxies to test first",
+      "noInvalid": "No invalid proxies to test",
+      "testStartFailed": "Failed to start testing",
+      "testError": "Testing error, please check network/server",
+      "saveSuccess": "Settings saved!",
+      "saveFailed": "Save failed, please retry",
+      "saveFailedWithMsg": "Save failed: {{msg}}"
+    },
+    "test": {
+      "all": "all proxies",
+      "selected": "selected {{count}} proxies",
+      "invalid": "invalid {{count}} proxies",
+      "start": "Start testing {{desc}}..."
+    },
+    "external": {
+      "loadFailed": "Failed to load external source: {{msg}}",
+      "errorLog": "Load external source failed:",
+      "loadError": "Failed to load external source: {{msg}}"
+    },
+    "bulk": {
+      "title": "Bulk import proxies",
+      "fromExternal": "Import from external source",
+      "urlPlaceholder": "Enter URL of proxy list, e.g. https://raw.githubusercontent.com/...",
+      "loadList": "Load list",
+      "example": "Example: https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt",
+      "defaultProtocol": "Default protocol",
+      "defaultProtocolTip": "Used when no protocol specified",
+      "list": "Proxy list",
+      "textPlaceholder": "Enter proxies, one per line. Supported formats:\nhost:port (uses selected default protocol)\nhost:port:country (country ignored)\nhttp://host:port\nhttp://username:password@host:port\nhost:port:protocol\nhost:port:protocol:username:password",
+      "supported": "Supported formats:",
+      "support1": "host:port (uses default protocol)",
+      "support2": "host:port:country (country ignored)",
+      "importing": "Importing...",
+      "importResult": "Import done! Success: {{s}}, Failed: {{f}}"
+    },
+    "common": { "loading": "Loading...", "unknown": "Unknown" },
+    "settings": {
+      "statusTitle": "Proxy Pool Status",
+      "total": "Total proxies",
+      "active": "Active proxies",
+      "valid": "Valid proxies",
+      "avgResponse": "Average response time",
+      "verify": {
+        "title": "Verification Settings",
+        "startup": "Check proxies on startup",
+        "startupDesc": "Automatically verify all proxies on app start"
+      },
+      "health": {
+        "enable": "Enable health check",
+        "enableDesc": "Periodically check proxy availability",
+        "interval": "Health check interval (minutes)",
+        "intervalDesc": "Interval to check health (1-1440 minutes)",
+        "maxFailures": "Max failures",
+        "maxFailuresDesc": "Remove proxy after reaching failures (1-100)"
+      },
+      "performance": {
+        "title": "Performance Settings",
+        "connectionTimeout": "Connection timeout (ms)",
+        "connectionTimeoutDesc": "Timeout for connecting to proxy (1000-60000 ms)",
+        "requestTimeout": "Request timeout (ms)",
+        "requestTimeoutDesc": "Timeout for proxy requests (1000-60000 ms)",
+        "maxConcurrentChecks": "Max concurrent checks",
+        "maxConcurrentChecksDesc": "Maximum number of concurrent proxy checks (1-100)"
+      },
+      "logging": {
+        "title": "Logging & Monitoring",
+        "enableDetailed": "Enable detailed logging",
+        "enableDetailedDesc": "Record detailed logs for proxy testing and usage"
+      }
+    }
+    ,
+    "list": {
+      "refresh": "Refresh",
+      "neverChecked": "Never checked",
+      "untested": "Untested",
+      "valid": "Valid",
+      "invalid": "Invalid",
+      "searchPlaceholder": "Search proxies...",
+      "protocol": "Protocol",
+      "allProtocols": "All protocols",
+      "status": "Status",
+      "allStatus": "All status",
+      "active": "Active",
+      "inactive": "Inactive",
+      "perPage": "{{n}} / page",
+      "showing": "Showing {{from}}-{{to}} of {{total}} proxies",
+      "filtered": "(filtered from {{n}})",
+      "selectedCount": "Selected {{n}} proxies",
+      "selectCurrentPage": "Select current page",
+      "unselectCurrentPage": "Unselect current page",
+      "deleteSelected": "Delete selected",
+      "cleanupInvalid": "Clean invalid",
+      "cleanupInvalidTip": "Delete all proxies marked as invalid",
+      "col": {
+        "protocol": "Protocol",
+        "address": "Address",
+        "credentials": "Credentials",
+        "status": "Status",
+        "latency": "Latency",
+        "lastChecked": "Last checked",
+        "active": "Active",
+        "actions": "Actions"
+      },
+      "noPassword": "(no password)",
+      "noCredentials": "No credentials",
+      "noMatch": "No matching proxies",
+      "empty": "No proxies yet, please add one",
+      "prev": "Prev",
+      "next": "Next",
+      "pageInfo": "Page {{cur}} of {{total}}"
+    },
+    "tunnel": {
+      "loadFailed": "Failed to load tunnels",
+      "tip": "Tip",
+      "fillNameAndSelect": "Please enter a tunnel name and select at least one proxy",
+      "updateSuccess": "Tunnel updated",
+      "createSuccess": "Tunnel created",
+      "updateFailed": "Failed to update tunnel",
+      "createFailed": "Failed to create tunnel",
+      "deleteSuccess": "Tunnel deleted",
+      "deleteFailed": "Failed to delete tunnel",
+      "toggleFailed": "Failed to toggle tunnel status",
+      "activated": "Tunnel activated",
+      "deactivated": "Tunnel deactivated",
+      "create": "Create Tunnel",
+      "edit": "Edit Tunnel",
+      "createNew": "Create New Tunnel",
+      "delete": "Delete Tunnel",
+      "activate": "Activate Tunnel",
+      "deactivate": "Deactivate Tunnel",
+      "desc": "Configure base info and advanced options for proxy tunnel",
+      "name": "Tunnel Name",
+      "namePlaceholder": "Enter tunnel name",
+      "taskId": "Task ID (optional)",
+      "taskIdPlaceholder": "Enter linked task ID",
+      "rotation": {
+        "title": "Rotation",
+        "type": "Rotation type",
+        "selectType": "Select rotation type",
+        "sequential": "Sequential",
+        "random": "Random",
+        "failover": "Failover",
+        "interval": "Rotation interval (seconds)",
+        "max": "Max rotations (0 = unlimited)",
+        "validity": "Validity (hours, 0 = unlimited)"
+      },
+      "concurrent": {
+        "title": "Concurrency & Retry",
+        "max": "Max concurrent requests",
+        "retry": "Retry times"
+      },
+      "selectProxies": "Select proxies ({{n}} selected)",
+      "selectAll": "Select all",
+      "unselectAll": "Unselect all",
+      "viewProxies": "View proxies",
+      "active": "Active",
+      "inactive": "Inactive",
+      "linkedTask": "Linked task",
+      "createdAt": "Created",
+      "empty": "No tunnels yet, please create one",
+      "proxyDetails": "Proxy Details",
+      "proxyList": "Proxy List",
+      "col": {
+        "name": "Tunnel Name",
+        "proxies": "Proxies",
+        "count": "Count",
+        "rotation": "Rotation",
+        "status": "Status",
+        "updatedAt": "Updated at",
+        "actions": "Actions"
+      }
+    }
+  },
+  "system": {
+    "title": "System Settings",
+    "subtitle": "Configure settings and preferences for Abyss",
+    "tabs": {
+      "general": "General",
+      "generalDesc": "Language, timezone, timeout and basics",
+      "logs": "Logs",
+      "logsDesc": "API testing logs and proxy pool logs",
+      "autosave": "Autosave",
+      "autosaveDesc": "Automatically save test results and history",
+      "theme": "Theme/UI",
+      "themeDesc": "Theme, fonts and UI layout",
+      "data": "Data",
+      "dataDesc": "Import/export, backup and restore",
+      "advanced": "Advanced",
+      "advancedDesc": "Proxy, certificates and performance"
+    }
+  },
+  "languages": {
+    "zhCN": "简体中文",
+    "en": "English"
+  },
+  "actions": {
+    "reset": "Reset to defaults",
+    "save": "Save Settings",
+    "saving": "Saving...",
+    "create": "Create",
+    "run": "Run",
+    "edit": "Edit",
+    "copy": "Copy",
+    "delete": "Delete"
+  },
+  
+  "dialog": {
+    "confirmDelete": "Confirm delete"
+  },
+  "sidebar": {
+    "expand": "Expand sidebar",
+    "collapse": "Collapse sidebar",
+    "searchPlaceholder": "Search APIs or collections...",
+    "tabs": {
+      "collections": "Collections",
+      "run": "Run"
+    },
+    "section": {
+      "collections": "Collections",
+      "proxyPool": "Proxy Pool",
+      "apiTest": "API Testing"
+    },
+    "collectionManage": "Manage Collections",
+    "noCollections": "No collections",
+    "proxy": {
+      "manage": "Proxy Management",
+      "tunnel": "Tunnel Management"
+    },
+    "settings": "Settings",
+    "runCollection": "Run Collection",
+    "runHistory": "Run History",
+    "history": "History",
+    "dialog": {
+      "addCollectionTitle": "Add New Collection",
+      "addCollectionDesc": "Create a new API collection to organize your API testing.",
+      "name": "Name",
+      "namePlaceholder": "Enter collection name",
+      "create": "Create"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Settings",
+    "subtitle": "Configure proxy, security, performance and scripting",
+    "tabs": {
+      "proxy": "Proxy",
+      "security": "Security",
+      "performance": "Performance",
+      "scripts": "Scripts"
+    },
+    "proxy": {
+      "globalTitle": "Global Proxy Configuration",
+      "enableGlobal": "Enable global proxy",
+      "enableGlobalDesc": "All requests will go through the configured proxy",
+      "type": "Proxy Type",
+      "host": "Proxy Host",
+      "port": "Port",
+      "username": "Username (optional)",
+      "password": "Password (optional)",
+      "bypass": "Bypass List",
+      "bypassDesc": "Comma-separated addresses, wildcard (*) supported"
+    },
+    "testing": "Testing...",
+    "testConnection": "Test Connection",
+    "security": {
+      "sslTitle": "SSL/TLS Settings",
+      "enableSSL": "Enable SSL verification",
+      "enableSSLDesc": "Verify the server's SSL certificate",
+      "allowSelfSigned": "Allow self-signed certificates",
+      "allowSelfSignedDesc": "Accept self-signed SSL certificates",
+      "enablePinning": "Enable certificate pinning",
+      "enablePinningDesc": "Trust only specified certificates",
+      "enableHSTS": "Enable HSTS",
+      "enableHSTSDesc": "HTTP Strict Transport Security",
+      "minimumTLS": "Minimum TLS version",
+      "trustedDomains": "Trusted domains",
+      "trustedDomainsDesc": "Skip strict SSL verification for these domains",
+      "requestTitle": "Request Security",
+      "enableSigning": "Enable request signing",
+      "enableSigningDesc": "Digitally sign and verify requests"
+    },
+    "perf": {
+      "memoryCacheTitle": "Memory & Cache",
+      "maxMemory": "Max memory (MB)",
+      "cacheSize": "Cache size (MB)",
+      "enableRequestCache": "Enable request cache",
+      "enableRequestCacheDesc": "Cache GET responses",
+      "enableCompression": "Enable response compression",
+      "enableCompressionDesc": "Automatically decompress responses",
+      "connectionTitle": "Connection Settings",
+      "maxConcurrent": "Max concurrent connections",
+      "poolSize": "Connection pool size",
+      "monitoringTitle": "Performance Monitoring",
+      "memory": "Memory Usage",
+      "cache": "Cache Usage",
+      "activeConnections": "Active Connections",
+      "totalRequests": "Total Requests",
+      "errorCount": "Error Count",
+      "lastUpdated": "Last updated",
+      "actions": {
+        "clearCache": "Clear Cache",
+        "optimizeMemory": "Optimize Memory",
+        "refresh": "Refresh"
+      },
+      "toast": {
+        "clearCacheSuccessTitle": "Cache Cleared",
+        "clearCacheSuccessDesc": "All cached data removed. System performance optimized.",
+        "clearCacheFailedTitle": "Clear Failed",
+        "clearCacheFailedDesc": "An error occurred while clearing cache",
+        "optimizeSuccessTitle": "Memory Optimized",
+        "optimizeSuccessDesc": "Garbage collection executed. Memory usage optimized.",
+        "optimizeFailedTitle": "Optimize Failed",
+        "optimizeFailedDesc": "An error occurred during memory optimization"
+      }
+    },
+    "scripts": {
+      "executionTitle": "Script Execution",
+      "enablePreRequest": "Enable pre-request scripts",
+      "enablePreRequestDesc": "Execute JavaScript before sending requests",
+      "enableTest": "Enable test scripts",
+      "enableTestDesc": "Execute test scripts after receiving responses",
+      "timeout": "Script timeout (seconds)",
+      "sandboxTitle": "Security Sandbox",
+      "allowFileSystem": "Allow filesystem access",
+      "allowFileSystemDesc": "Scripts can read/write local files",
+      "allowNetwork": "Allow network access",
+      "allowNetworkDesc": "Scripts can make network requests",
+      "enableConsole": "Enable console logging",
+      "enableConsoleDesc": "Display script output in console",
+      "templatesTitle": "Script Templates"
+    },
+    "toast": {
+      "savedTitle": "Saved",
+      "savedDesc": "Advanced settings saved successfully",
+      "saveFailedTitle": "Save failed",
+      "saveFailedDesc": "An error occurred while saving",
+      "proxyTestSuccessTitle": "Proxy test succeeded",
+      "proxyTestSuccessDesc": "Proxy connection OK",
+      "proxyTestFailedTitle": "Proxy test failed",
+      "proxyTestFailedDesc": "Unable to connect to proxy"
+    }
+  },
+  "autosave": {
+    "title": "Autosave Settings",
+    "subtitle": "Configure autosave, history and backup options",
+    "storage": {
+      "title": "Storage Usage",
+      "usedLabel": "Used Storage",
+      "historyCount": "History Count",
+      "backupCount": "Backup Files"
+    },
+    "section": {
+      "title": "Autosave"
+    },
+    "enable": "Enable autosave",
+    "enableDesc": "Automatically save workspace changes",
+    "interval": "Save interval (minutes)",
+    "minutes": "{{m}} minutes",
+    "data": {
+      "title": "Data Save Options",
+      "saveResults": "Save test results",
+      "saveResultsDesc": "Automatically save API test results and responses",
+      "saveHistory": "Save request history",
+      "saveHistoryDesc": "Keep history for all API requests",
+      "backupCollections": "Backup collections",
+      "backupCollectionsDesc": "Periodically backup API collections and configuration"
+    },
+    "history": {
+      "title": "History Management",
+      "retentionDays": "Retention days",
+      "maxEntries": "Max entries",
+      "clear": "Clear history"
+    },
+    "backup": {
+      "title": "Backup Settings",
+      "enable": "Enable periodic backup",
+      "enableDesc": "Automatically create data backups",
+      "interval": "Backup interval (hours)",
+      "hours": "{{h}} hours",
+      "days": "{{d}} days",
+      "maxFiles": "Max backup files",
+      "backing": "Backing up...",
+      "now": "Backup now"
+    },
+    "toast": {
+      "savedTitle": "Saved",
+      "savedDesc": "Autosave settings saved successfully",
+      "saveFailedTitle": "Save failed",
+      "saveFailedDesc": "An error occurred while saving",
+      "backupSuccessTitle": "Backup completed",
+      "backupSuccessDesc": "Data backup completed successfully",
+      "backupFailedTitle": "Backup failed",
+      "backupFailedDesc": "An error occurred during backup",
+      "clearSuccessTitle": "Cleared",
+      "clearSuccessDesc": "History cleared",
+      "clearFailedTitle": "Clear failed",
+      "clearFailedDesc": "An error occurred while clearing"
+    }
+  },
+  
+  "data": {
+    "title": "Data Management",
+    "subtitle": "Import/export data, backup/restore and data cleanup",
+    "all": "All data",
+    "selected": "Selected data",
+    "stats": {
+      "title": "Data Statistics",
+      "loading": "Loading data statistics...",
+      "collections": "API Collections",
+      "environments": "Environments",
+      "results": "Test Results",
+      "proxyConfigs": "Proxy Configs",
+      "total": "Total data size: "
+    },
+    "tabs": {
+      "export": "Data Export",
+      "cleanup": "Data Cleanup"
+    },
+    "export": {
+      "title": "Export Data",
+      "progress": "Export Progress",
+      "format": "Export Format",
+      "all": "Export All Data",
+      "allDesc": "Including all collections, environments, results, etc.",
+      "collections": "Export API Collections",
+      "collectionsDesc": "Export API collection data only",
+      "environments": "Export Environments",
+      "environmentsDesc": "Export environment variables only",
+      "results": "Export Test Results",
+      "resultsDesc": "Export test history only"
+    },
+    "cleanup": {
+      "title": "Data Cleanup",
+      "warning": "Data cleanup operations cannot be undone. Please operate with caution. It is recommended to export backups before cleanup.",
+      "cache": "Clear Cache",
+      "cacheDesc": "Clear temporary cache data",
+      "logs": "Clear Logs",
+      "logsDesc": "Clear all log records",
+      "history": "Clear History",
+      "historyDesc": "Clear test history records",
+      "all": "Clear All Temporary Data",
+      "allDesc": "Clear cache, logs and history"
+    },
+    "toast": {
+      "statsFailedTitle": "Failed to Get Data Statistics",
+      "statsFailedDesc": "Unable to get data statistics",
+      "exportSuccessTitle": "Export Successful",
+      "exportSuccessDesc": "{{which}} has been exported successfully",
+      "exportFailedTitle": "Export Failed",
+      "exportFailedDesc": "An error occurred during export, please try again",
+      "clearSuccessTitle": "Cleanup Successful",
+      "clearFailedTitle": "Cleanup Failed",
+      "clearFailedDesc": "An error occurred during cleanup",
+      "cleared": "Data has been cleared",
+      "cacheCleared": "Cache data has been cleared",
+      "logsCleared": "Log data has been cleared",
+      "historyCleared": "History records have been cleared",
+      "allCleared": "All temporary data has been cleared"
+    }
+  },
+  "logs": {
+    "title": "Logs",
+    "subtitle": "View, manage and configure system logs",
+    "tabs": { "view": "View Logs", "settings": "Log Settings" },
+    "searchPlaceholder": "Search logs...",
+    "level": { "all": "All levels", "error": "Error", "warn": "Warn", "info": "Info", "debug": "Debug" },
+    "category": { "all": "All categories", "proxy": "Proxy", "system": "System" },
+    "export": "Export",
+    "clear": "Clear",
+    "records": "Log Records ({{count}})",
+    "refresh": "Refresh",
+    "noMatch": "No matching log records",
+    "settings": {
+      "title": "Log Recording Settings",
+      "api": "API request logs",
+      "apiDesc": "Record all API requests and responses",
+      "proxy": "Proxy pool logs",
+      "proxyDesc": "Record proxy pool operations and status",
+      "system": "System logs",
+      "systemDesc": "Record system actions and errors"
+    },
+    "config": {
+      "title": "Log Configuration",
+      "level": "Log level",
+      "retention": "Retention days",
+      "maxSize": "Max log file size (MB)"
+    },
+    "toast": {
+      "exportSuccessTitle": "Exported",
+      "exportSuccessDesc": "Logs exported successfully",
+      "exportFailedTitle": "Export failed",
+      "exportFailedDesc": "An error occurred while exporting",
+      "clearSuccessTitle": "Cleared",
+      "clearSuccessDesc": "All logs cleared",
+      "clearFailedTitle": "Clear failed",
+      "clearFailedDesc": "An error occurred while clearing logs"
+    }
+  },
+  "theme": {
+    "title": "Theme & UI",
+    "subtitle": "Customize appearance and interactions",
+    "mode": { "title": "Theme Mode" },
+    "font": {
+      "title": "Font Settings",
+      "size": "Font size",
+      "small": "Small (12px)",
+      "medium": "Medium (16px)",
+      "large": "Large (20px)",
+      "preview": "Preview: Sample text in current font size"
+    },
+    "layout": {
+      "title": "Layout",
+      "density": "Interface density",
+      "sidebarWidth": "Sidebar width",
+      "narrow": "Narrow (200px)",
+      "standard": "Standard (256px)",
+      "wide": "Wide (400px)"
+    },
+    "interaction": {
+      "title": "Interaction",
+      "animations": "Enable animations",
+      "animationsDesc": "Transitions and animations",
+      "sounds": "Enable sounds",
+      "soundsDesc": "Play sound when collection run completes"
+    },
+    "editor": {
+      "title": "Editor",
+      "lineNumbers": "Show line numbers",
+      "lineNumbersDesc": "Display line numbers in editor",
+      "wordWrap": "Word wrap",
+      "wordWrapDesc": "Wrap long lines",
+      "highlightLine": "Highlight current line",
+      "highlightLineDesc": "Highlight the line with cursor"
+    },
+    "toast": {
+      "savedTitle": "Saved",
+      "savedDesc": "Theme settings saved and applied",
+      "saveFailedTitle": "Save failed",
+      "saveFailedDesc": "An error occurred while saving"
+    }
+  },
+  "proxy": {
+    "title": "Proxy Pool",
+    "settings": "Proxy Settings",
+    "subtitle": "Manage, test and configure proxies used for API requests",
+    "tabs": {
+      "list": "Proxy List",
+      "add": "Add Proxy",
+      "batch": "Batch Import",
+      "settings": "Pool Settings"
+    },
+    "loading": "Loading...",
+    "available": "Available Proxies ({{count}})",
+    "testing": "Testing...",
+    "testAll": "Test All Proxies",
+    "noProxies": "No proxies added yet",
+    "addTitle": "Add New Proxy",
+    "addSubtitle": "Add a new proxy server to the pool",
+    "form": {
+      "protocol": "Protocol *",
+      "selectProtocol": "Select protocol",
+      "host": "Host *",
+      "port": "Port *",
+      "username": "Username (optional)",
+      "password": "Password (optional)"
+    },
+    "batchTitle": "Batch Import Proxies",
+    "batchSubtitle": "Add multiple proxies to the pool at once",
+    "batchFormats": "Supported formats (one per line)",
+    "batchList": "Proxy List",
+    "batchPlaceholder": "Enter proxy list, one per line",
+    "importing": "Importing...",
+    "configLoadFailed": "Failed to load config",
+    "configTitle": "Proxy Pool Configuration",
+    "configSubtitle": "Customize proxy pool behavior and settings",
+    "selectionMode": "Selection Mode",
+    "selectMode": "Select mode",
+    "selectionModeDesc": "How to select a proxy from available ones",
+    "mode": {
+      "random": "Random",
+      "roundRobin": "Round Robin",
+      "fastest": "Fastest"
+    },
+    "autoRotate": "Auto-rotation interval (seconds)",
+    "autoRotateDesc": "Set 0 to disable auto rotation, otherwise rotate every N seconds",
+    "checkOnStartup": "Test on startup",
+    "checkOnStartupDesc": "Automatically test all proxies when the app starts",
+    "validateOnFailure": "Validate on failure",
+    "validateOnFailureDesc": "Automatically validate a proxy when a request fails",
+    "maxFailures": "Max failures",
+    "maxFailuresDesc": "Disable a proxy automatically once it reaches this failure count",
+    "toast": {
+      "fetchFailedTitle": "Failed to fetch proxies",
+      "fetchFailedDesc": "Unable to get proxy list",
+      "configFetchFailedTitle": "Failed to fetch config",
+      "configFetchFailedDesc": "Unable to get proxy pool config",
+      "invalidInput": "Invalid input",
+      "enterAtLeastOne": "Please enter at least one proxy",
+      "testStarted": "Test started",
+      "testStartedDesc": "Testing {{count}} proxies, this may take a while",
+      "testFailed": "Test failed",
+      "testFailedDesc": "An error occurred while testing proxies",
+      "missingRequired": "Missing required fields",
+      "hostPortRequired": "Host and port are required",
+      "addSuccess": "Added successfully",
+      "addSuccessDesc": "Proxy {{host}}:{{port}} added",
+      "addFailed": "Add failed",
+      "addFailedDesc": "An error occurred while adding a proxy",
+      "deleteSuccess": "Deleted successfully",
+      "deleteSuccessDesc": "Proxy deleted successfully",
+      "deleteFailed": "Delete failed",
+      "deleteFailedDesc": "An error occurred while deleting a proxy",
+      "updateSuccess": "Updated successfully",
+      "updateSuccessDesc": "Proxy pool configuration updated",
+      "updateFailed": "Update failed",
+      "updateFailedDesc": "An error occurred while updating configuration"
+    }
+  }
+  ,
+  "auth": {
+    "selectType": "Select authentication type",
+    "type": {
+      "none": "None",
+      "basic": "Basic Auth",
+      "apikey": "API Key",
+      "bearer": "Bearer Token",
+      "oauth2": "OAuth 2.0"
+    },
+    "enable": "Enable authentication",
+    "title": {
+      "basic": "Basic Authentication",
+      "apikey": "API Key Authentication",
+      "bearer": "Bearer Token Authentication",
+      "oauth2": "OAuth 2.0 Authentication"
+    },
+    "desc": {
+      "basic": "Use username and password for HTTP Basic auth",
+      "apikey": "Use API key for authentication, add to headers or URL",
+      "bearer": "Use a Bearer token (often JWT)",
+      "oauth2": "OAuth 2.0 authorization framework"
+    },
+    "basic": {
+      "username": "Username",
+      "usernamePlaceholder": "Enter username",
+      "password": "Password",
+      "passwordPlaceholder": "Enter password"
+    },
+    "apikey": {
+      "name": "Key name",
+      "namePlaceholder": "e.g., X-API-Key or api_key",
+      "value": "Key value",
+      "valuePlaceholder": "Enter API Key",
+      "addTo": "Add to",
+      "addToPlaceholder": "Select position",
+      "header": "Header",
+      "query": "Query"
+    },
+    "bearer": {
+      "token": "Token",
+      "tokenPlaceholder": "Enter Bearer Token",
+      "tip": "Enter token without \"Bearer \" prefix. It will be added automatically"
+    },
+    "oauth": {
+      "tabs": { "config": "Config", "token": "Token" },
+      "tokenUrl": "Token URL",
+      "authUrl": "Auth URL",
+      "clientId": "Client ID",
+      "clientIdPlaceholder": "Enter Client ID",
+      "clientSecret": "Client Secret",
+      "clientSecretPlaceholder": "Enter Client Secret",
+      "scope": "Scope",
+      "scopePlaceholder": "Separate scopes with space, e.g., read write",
+      "accessToken": "Access Token",
+      "accessTokenPlaceholder": "Enter Access Token",
+      "refreshToken": "Refresh Token",
+      "refreshTokenPlaceholder": "Enter Refresh Token"
+    },
+    "noneHint": "Select an authentication type to configure API auth"
+  }
+  ,
+  "workspace": {
+    "tree": {
+      "edit": "Edit",
+      "delete": "Delete",
+      "newFolder": "New Folder",
+      "newRequest": "New Request",
+      "editCollection": "Edit Collection",
+      "exportSuccess": "Exported",
+      "exportPostmanDesc": "Collection \"{{name}}\" exported to Postman JSON",
+      "exportJson": "Export as JSON",
+      "exportZipDesc": "Collection \"{{name}}\" exported as ZIP",
+      "exportZip": "Export as ZIP",
+      "deleteCollection": "Delete Collection",
+      "empty": "Collection is empty. Add a request or folder to get started",
+      "searchPlaceholder": "Search collections and requests...",
+      "collection": "Collection",
+      "noCollections": "No API collections found",
+      "createCollection": "Create Collection",
+      "deleteFolder": "Delete Folder",
+      "deleteRequest": "Delete Request",
+      "confirmDeleteCollection": "Are you sure to delete collection \"{{name}}\"? This will remove all related requests and folders.",
+      "confirmDeleteFolder": "Are you sure to delete folder \"{{name}}\"? This will remove all inner requests and subfolders.",
+      "confirmDeleteRequest": "Are you sure to delete request \"{{name}}\"? This action cannot be undone.",
+      "confirmDeleteGeneric": "Are you sure to delete this item? This action cannot be undone.",
+      "refresh": "Refresh collections"
+    },
+    "editor": {
+      "newRequest": "New Request",
+      "method": "Method",
+      "urlPlaceholder": "Enter request URL",
+      "send": "Send",
+      "save": "Save",
+      "tabs": { "params": "Params", "headers": "Headers", "body": "Body", "auth": "Auth", "scripts": "Scripts" },
+      "params": {
+        "title": "Query Parameters",
+        "tableMode": "Table mode",
+        "bulkEdit": "Bulk edit",
+        "applyAndReturn": "Apply and return to table",
+        "add": "Add parameter",
+        "keyPlaceholder": "Key",
+        "valuePlaceholder": "Value",
+        "bulkHelp1": "One parameter per line, format:",
+        "or": "or",
+        "bulkHelp2": "e.g.",
+        "bulkPlaceholder": "id=123\nsort=desc\nfilter=active\npage=1"
+      },
+      "headers": {
+        "title": "Headers",
+        "tableMode": "Table mode",
+        "bulkEdit": "Bulk edit",
+        "applyAndReturn": "Apply and return to table",
+        "add": "Add header",
+        "keyPlaceholder": "Header name",
+        "valuePlaceholder": "Header value",
+        "bulkHelp1": "One header per line, format:",
+        "bulkHelp2": "e.g.",
+        "bulkPlaceholder": "Content-Type: application/json\nAccept: application/json\nAuthorization: Bearer token"
+      },
+      "common": { "enabled": "Enabled", "key": "Key", "value": "Value" },
+      "body": {
+        "urlencoded": "URL Encoded",
+        "binary": "Binary",
+        "contentType": "Content Type",
+        "jsonPlaceholder": "Enter request body in JSON format",
+        "rawPlaceholder": "Request body",
+        "uploadBinary": "Upload binary file",
+        "chooseFile": "Choose File",
+        "form": {
+          "keyPlaceholder": "Key name",
+          "valuePlaceholder": "Value",
+          "add": "Add form field"
+        },
+        "urlencodedAdd": "Add URL-encoded field"
+      },
+      "applyChanges": "Apply changes",
+      "auth": {
+        "debugTitle": "Auth Debug Info",
+        "currentType": "Current auth type:",
+        "enabled": "Enabled:",
+        "none": "None",
+        "yes": "Yes",
+        "no": "No",
+        "set": "Set",
+        "unset": "Not set"
+      }
+    },
+    "response": {
+      "actions": { "cancel": "Cancel Request", "save": "Save Response" },
+      "loading": { "processingScripts": "Processing test scripts...", "sending": "Sending request..." },
+      "empty": "Response will appear here after sending a request",
+      "tabs": { "body": "Body", "headers": "Headers", "cookies": "Cookies", "timeline": "Timeline", "script": "Script" },
+      "headers": { "name": "Name", "value": "Value", "empty": "No response headers" },
+      "cookies": { "name": "Name", "value": "Value", "attributes": "Attributes", "empty": "No cookies" },
+      "timeline": {
+        "title": "Request Timing Analysis",
+        "total": "Total time",
+        "tip": "Tip: Hover over the bars to see detailed timing. 'Waiting for response' often takes the longest.",
+        "chart": "Timing chart",
+        "network": "Network time",
+        "serverTime": "Server time",
+        "dns": "DNS Lookup",
+        "tcp": "TCP Connect",
+        "tls": "TLS Handshake",
+        "request": "Request Send",
+        "server": "Server Processing",
+        "download": "Response Download",
+        "wait": "Waiting"
+      },
+      "tests": {
+        "title": "Test Script Validation",
+        "subtitle": "Run test scripts to validate the response",
+        "allPassed": "All tests passed",
+        "failed": "Assertions not met",
+        "disabled": "Disabled",
+        "run": "Run Test",
+        "passed": "Passed",
+        "assertionFailed": "Assertion failed",
+        "notRun": "Not run",
+        "running": "Running...",
+        "runAll": "Run All Tests",
+        "empty": "No test scripts available",
+        "hint": "Add test scripts in the request editor to validate responses"
+      },
+      "status": {
+        "cors": "CORS restriction",
+        "timeout": "Request timeout",
+        "network": "Network error",
+        "unknown": "Unknown error"
+      }
+    },
+    "toast": {
+      "loadCollectionsFailed": "Failed to load API collections:",
+      "saveFailed": "Save failed",
+      "chooseCollection": "Please choose a collection first",
+      "requestNameRequired": "Request name is required",
+      "requestCancelled": "Request cancelled",
+      "requestCancelledDesc": "The request was cancelled by user",
+      "requestSent": "Request sent",
+      "status": "Status",
+      "requestFailed": "Request failed",
+      "requestError": "Error while sending request",
+      "cannotCreateRequest": "Cannot create request"
+    },
+    "empty": {
+      "noOpenRequest": "No open request",
+      "hint": "Select a request from the left collections or create a new one"
+    },
+    "script": {
+      "examples": {
+        "writeHere": "Write test code here",
+        "statusCheck": "Status Check",
+        "title": "Examples:"
+      },
+      "tabs": { "preRequest": "Pre-request Script", "tests": "Tests" },
+      "pre": {
+        "enable": "Enable pre-request script",
+        "helpTitle": "Pre-request Script Help",
+        "helpDesc": "Pre-request scripts run before the request is sent, useful for setting params and authentication",
+        "usageTitle": "Pre-request scripts can be used to:",
+        "usage": {
+          "item1": "Dynamically set params, headers or body",
+          "item2": "Generate random data or timestamps",
+          "item3": "Perform complex authentication",
+          "item4": "Extract data from other requests"
+        },
+        "placeholder": "// Write your pre-request script here"
+      },
+      "tests": {
+        "helpTitle": "Test Script Help",
+        "helpDesc": "Test scripts run after receiving the response to validate data and assertions",
+        "usageTitle": "Test scripts can be used to:",
+        "usage": {
+          "item1": "Validate status, body and headers",
+          "item2": "Extract data and save as variables",
+          "item3": "Validate response time and performance",
+          "item4": "Perform assertions and tests"
+        },
+        "assertionsTitle": "Common assertions:",
+        "add": "Add Test",
+        "empty": "No test scripts",
+        "namePlaceholder": "Test name",
+        "nameTitle": "Test name",
+        "placeholder": "// Write your test code here"
+      },
+      "help": "Help",
+      "commonApi": "Common APIs:",
+      "api": {
+        "setVar": "Set variable",
+        "addHeader": "Add header",
+        "modifyBody": "Modify body",
+        "timestamp": "Get current timestamp",
+        "createTest": "Create test",
+        "checkStatus": "Validate status",
+        "getJson": "Get JSON response",
+        "createExpect": "Create assertion"
+      },
+      "assert": {
+        "equal": "Equal",
+        "property": "Has property",
+        "type": "Type check",
+        "include": "Includes",
+        "above": "Above",
+        "below": "Below"
+      }
+    },
+    "import": {
+      "importCollection": "Import",
+      "importPostman": "Import Postman collection",
+      "errorTitle": "Import error",
+      "pickFile": "Choose collection file",
+      "fileError": "File format error",
+      "parseFailed": "Failed to parse Postman JSON, please ensure a valid file",
+      "invalidPostman": "Invalid Postman collection file: missing required info",
+      "successTitle": "Imported",
+      "successDesc": "Collection \"{{name}}\" imported with {{count}} requests",
+      "failedTitle": "Import failed",
+      "failedDesc": "Unable to import Postman collection",
+      "postman": {
+        "title": "Import Postman Collection",
+        "desc": "Upload Postman exported collection (.json) to import into API workspace."
+      },
+      "selected": "Selected",
+      "importing": "Importing...",
+      "import": "Import"
+    }
+  }
+}
+
+

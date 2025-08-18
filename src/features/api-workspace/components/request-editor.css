@@ -1,0 +1,22 @@
+/* 请求编辑器自定义样式 */
+.api-tabs-content {
+  position: relative !important; /* 改为相对定位而非绝对定位 */
+  min-height: 300px;
+  height: 100%;
+  width: 100%;
+  display: none;
+  overflow: auto;
+}
+
+.api-tabs-content[data-state="active"] {
+  display: block;
+}
+
+/* 请求体容器样式 */
+.request-body-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
