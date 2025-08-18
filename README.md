@@ -1,8 +1,8 @@
-# Abyss API Studio
-
 <div align="center">
+   
+# Abyss
 
-![Abyss Logo](public/logo.svg)
+<img src="public/logo.svg" alt="Abyss Logo" width="200" height="200">
 
 **🚀 现代化的 API 测试与管理平台**
 
@@ -11,7 +11,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-15.2.4-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-blue)](https://www.typescriptlang.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-6.16.0-green)](https://www.mongodb.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache-yellow)](LICENSE)
 
 </div>
 
@@ -202,36 +202,6 @@ MAX_CONCURRENT_REQUESTS=10
    - 配置轮换策略和规则
    - 监控隧道使用情况
 
-### 脚本编写
-
-**前置脚本示例**：
-```javascript
-// 设置认证头
-pm.request.headers.add({
-    key: 'Authorization',
-    value: 'Bearer ' + pm.environment.get('token')
-});
-
-// 生成随机数据
-pm.variables.set('randomId', Math.floor(Math.random() * 1000));
-```
-
-**测试脚本示例**：
-```javascript
-pm.test("响应状态码为 200", function () {
-    pm.response.to.have.status(200);
-});
-
-pm.test("响应时间小于 200ms", function () {
-    pm.expect(pm.response.responseTime).to.be.below(200);
-});
-
-pm.test("响应包含用户ID", function () {
-    const jsonData = pm.response.json();
-    pm.expect(jsonData).to.have.property('userId');
-});
-```
-
 ## 🔧 开发指南
 
 ### 项目结构
@@ -286,44 +256,14 @@ npm run db-init
 4. 推送分支：`git push origin feature/amazing-feature`
 5. 创建 Pull Request
 
-### 代码规范
-
-- 使用 TypeScript 进行类型安全开发
-- 遵循 Biome 配置的代码风格
-- 组件使用 React Hooks 和函数式组件
-- API 路由使用 Next.js App Router 约定
-- 提交信息遵循 Conventional Commits 规范
-
-## 🌟 功能路线图
-
-### v0.2.0 (计划中)
-- [ ] GraphQL API 支持
-- [ ] 实时协作功能
-- [ ] 插件系统
-- [ ] 性能分析工具
-
-### v0.3.0 (计划中)
-- [ ] API 文档生成
-- [ ] Mock 服务器
-- [ ] 自动化测试调度
-- [ ] 团队权限管理
-
-### v1.0.0 (目标)
-- [ ] 企业级部署支持
-- [ ] 高级分析报告
-- [ ] 第三方集成
-- [ ] 移动端应用
-
 ## 🤝 社区与支持
 
-- **问题反馈**：[GitHub Issues](https://github.com/your-repo/abyss-api-studio/issues)
-- **功能建议**：[GitHub Discussions](https://github.com/your-repo/abyss-api-studio/discussions)
-- **文档**：[项目文档](https://docs.abyss-api.com)
-- **邮件支持**：support@abyss-api.com
+- **问题反馈**：[GitHub Issues](https://github.com/qqv/abyss/issues)
+- **功能建议**：[GitHub Discussions](https://github.com/qqv/abyss/discussions)
 
 ## 📄 许可证
 
-本项目基于 [MIT 许可证](LICENSE) 开源发布。
+本项目基于 [Apache 许可证](LICENSE) 开源发布。
 
 ## 🙏 致谢
 
@@ -333,13 +273,5 @@ npm run db-init
 - [Tailwind CSS](https://tailwindcss.com/) - 实用优先的 CSS 框架
 - [MongoDB](https://www.mongodb.com/) - 现代数据库平台
 - [TypeScript](https://www.typescriptlang.org/) - JavaScript 的类型化超集
-
----
-
-<div align="center">
-
-**用 ❤️ 为开发者打造**
-
-[网站](https://abyss-api.com) • [文档](https://docs.abyss-api.com) • [反馈](https://github.com/your-repo/abyss-api-studio/issues)
 
 </div>
