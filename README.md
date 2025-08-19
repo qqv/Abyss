@@ -6,7 +6,7 @@
 
 **🚀 现代化的 API 测试与管理平台**
 
-[简体中文](README.MD) | [English](README_en.MD)
+[简体中文](README.md) | [English](README_en.md)
 
 一个功能强大、界面优美的 API 开发测试工具，支持集合管理、代理池、脚本测试等专业功能
 
