@@ -193,4 +193,25 @@ export interface ApiScanJob {
   endTime?: string | null;
   results: ApiResult[];
 }
+
+// 示例数据
+export const mockParameterSets: ParameterSet[] = [
+  {
+    _id: "param-domains",
+    id: "param-domains", // 兼容字段
+    name: "测试域名",
+    variables: {
+      "domain": ["example.com", "test.com", "dev.local"]
+    },
+    createdAt: "2025-05-16T10:00:00.000Z"
+  },
+  {
+    _id: "param-users",
+    id: "param-users", // 兼容字段
+    name: "用户测试集",
+    variables: {
+      "username": ["admin", "test", "user1", "user2"]
+    },
+    createdAt: "2025-05-16T11:00:00.000Z"
+  }
 ];

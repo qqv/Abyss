@@ -41,7 +41,8 @@ export class LogManager {
   private settingsFile: string;
   private currentLogFile: string;
   private settings: LogsSettings;
-  private static globalRequestLoggingEnabled: boolean = true; // 全局请求日志开关
+  private static globalRequestLoggingEnabled: boolean = false; // 全局请求日志开关，默认关闭
+  private initializationComplete: boolean = false; // 初始化完成标志
 
   private constructor() {
     // 在生产环境中，日志应该存储在应用数据目录
@@ -50,11 +51,11 @@ export class LogManager {
     this.settingsFile = path.join(this.logsDir, 'settings.json');
     this.currentLogFile = path.join(this.logsDir, `app-${this.getCurrentDateString()}.log`);
     
-    // 默认设置
+    // 默认设置 - 修改为关闭所有日志，防止未初始化时的日志记录
     this.settings = {
-      enableApiLogs: true,
-      enableProxyLogs: true,
-      enableSystemLogs: true,
+      enableApiLogs: false,
+      enableProxyLogs: false,
+      enableSystemLogs: false,
       logLevel: 'info',
       retentionDays: 30,
       maxLogSize: 100
@@ -80,8 +81,13 @@ export class LogManager {
       
       // 清理过期日志
       await this.cleanupOldLogs();
+      
+      // 标记初始化完成
+      this.initializationComplete = true;
     } catch (error) {
       console.error('初始化日志管理器失败:', error);
+      // 即使初始化失败，也标记完成，避免永远阻塞
+      this.initializationComplete = true;
     }
   }
 
@@ -93,9 +99,16 @@ export class LogManager {
     try {
       const settingsData = await fs.readFile(this.settingsFile, 'utf-8');
       this.settings = { ...this.settings, ...JSON.parse(settingsData) };
+      
+      // 根据加载的设置更新全局开关 - 如果所有日志都关闭，则关闭全局开关
+      const allLogsDisabled = !this.settings.enableApiLogs && 
+                             !this.settings.enableProxyLogs && 
+                             !this.settings.enableSystemLogs;
+      LogManager.globalRequestLoggingEnabled = !allLogsDisabled;
     } catch (error) {
-      // 设置文件不存在，使用默认设置
-      await this.saveSettings();
+      // 设置文件不存在，保持默认设置（所有日志关闭）
+      // 不自动创建设置文件，让用户主动配置
+      console.log('日志设置文件不存在，使用默认设置（所有日志关闭）');
     }
   }
 
@@ -108,7 +121,12 @@ export class LogManager {
   }
 
   private shouldLog(level: string, category: string): boolean {
-    // 首先检查全局请求日志记录开关
+    // 首先检查是否已完成初始化
+    if (!this.initializationComplete) {
+      return false;
+    }
+
+    // 检查全局请求日志记录开关
     if (!LogManager.globalRequestLoggingEnabled) {
       return false;
     }
@@ -296,6 +314,13 @@ export class LogManager {
 
   async updateSettings(newSettings: LogsSettings) {
     this.settings = { ...newSettings };
+    
+    // 根据新设置更新全局开关
+    const allLogsDisabled = !this.settings.enableApiLogs && 
+                           !this.settings.enableProxyLogs && 
+                           !this.settings.enableSystemLogs;
+    LogManager.globalRequestLoggingEnabled = !allLogsDisabled;
+    
     await this.saveSettings();
   }
 

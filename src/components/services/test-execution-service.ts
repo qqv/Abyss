@@ -168,6 +168,27 @@ export function executeTestScript(
                   return {};
                 }
                 
+                // 检查是否为HTML响应（常见的错误页面）
+                const htmlPattern = /^\s*<!DOCTYPE|^\s*<html/i;
+                if (htmlPattern.test(response.data)) {
+                  console.warn('检测到HTML响应，可能是错误页面，返回错误对象');
+                  // 尝试提取错误信息
+                  const titleMatch = response.data.match(/<title>(.*?)<\/title>/i);
+                  const h1Match = response.data.match(/<h1[^>]*>(.*?)<\/h1>/i);
+                  const h2Match = response.data.match(/<h2[^>]*>(.*?)<\/h2>/i);
+                  
+                  let errorMessage = 'HTML响应';
+                  if (titleMatch) errorMessage = titleMatch[1];
+                  else if (h1Match) errorMessage = h1Match[1];
+                  else if (h2Match) errorMessage = h2Match[1];
+                  
+                  return { 
+                    _isHtmlResponse: true,
+                    error: errorMessage,
+                    _rawHtml: response.data.substring(0, 500) + (response.data.length > 500 ? '...' : '')
+                  };
+                }
+                
                 // 检查是否以错误信息开头（如"dial tcp", "connect ECONNREFUSED"等）
                 const errorPatterns = ['dial tcp', 'connect ECONNREFUSED', 'ENOTFOUND', 'ETIMEDOUT', 'Error:', '代理请求异常:', '代理请求失败'];
                 const isErrorMessage = errorPatterns.some(pattern => response.data.includes(pattern));
@@ -177,6 +198,17 @@ export function executeTestScript(
                   return { error: response.data };
                 }
                 
+                // 检查是否看起来像JSON（以{或[开头）
+                const trimmedData = response.data.trim();
+                if (!trimmedData.startsWith('{') && !trimmedData.startsWith('[')) {
+                  console.warn('响应数据不像JSON格式，返回错误对象:', trimmedData.substring(0, 100) + '...');
+                  return { 
+                    _isNonJsonResponse: true,
+                    error: '响应不是有效的JSON格式',
+                    _rawData: trimmedData.substring(0, 200) + (trimmedData.length > 200 ? '...' : '')
+                  };
+                }
+                
                 return JSON.parse(response.data);
               }
               
@@ -184,14 +216,19 @@ export function executeTestScript(
               console.warn('无法解析的响应数据类型:', typeof response.data);
               return {};
             } catch (e) {
-              console.error('解析JSON响应失败:', e);
-              console.error('原始响应数据:', response.data);
-              // 返回包含原始数据的对象，避免测试脚本完全失败
-              return { 
-                _parseError: true, 
-                _rawData: response.data,
-                error: `JSON解析失败: ${e instanceof Error ? e.message : String(e)}`
-              };
+              // 减少控制台错误输出，只在必要时输出
+              if (response.data && typeof response.data === 'string' && response.data.length > 0) {
+                console.warn('JSON解析失败，可能收到了非JSON响应');
+                // 返回包含原始数据的对象，避免测试脚本完全失败
+                return { 
+                  _parseError: true, 
+                  _rawData: typeof response.data === 'string' ? 
+                    response.data.substring(0, 200) + (response.data.length > 200 ? '...' : '') : 
+                    response.data,
+                  error: `JSON解析失败: ${e instanceof Error ? e.message : String(e)}`
+                };
+              }
+              return { error: 'JSON解析失败：空响应或无效数据' };
             }
           },
           text: () => response.data,
@@ -218,16 +255,64 @@ export function executeTestScript(
               jsonBody: () => {
                 try {
                   if (typeof response.data === 'object') return true;
+                  
+                  // 检查是否为字符串类型
+                  if (typeof response.data !== 'string') {
+                    throw new Error('响应不是有效的JSON');
+                  }
+                  
+                  // 检查是否为HTML响应
+                  const htmlPattern = /^\s*<!DOCTYPE|^\s*<html/i;
+                  if (htmlPattern.test(response.data)) {
+                    throw new Error('响应是HTML格式，不是JSON');
+                  }
+                  
+                  // 检查是否看起来像JSON
+                  const trimmedData = response.data.trim();
+                  if (!trimmedData.startsWith('{') && !trimmedData.startsWith('[')) {
+                    throw new Error('响应不是有效的JSON格式');
+                  }
+                  
                   JSON.parse(response.data);
                   return true;
                 } catch (e) {
+                  if (e instanceof Error && e.message.includes('响应')) {
+                    throw e; // 重新抛出我们自定义的错误
+                  }
                   throw new Error('响应不是有效的JSON');
                 }
               }
             },
             include: {
               jsonBody: (expected: any) => {
-                const json = typeof response.data === 'object' ? response.data : JSON.parse(response.data);
+                let json;
+                try {
+                  if (typeof response.data === 'object') {
+                    json = response.data;
+                  } else if (typeof response.data === 'string') {
+                    // 检查是否为HTML响应
+                    const htmlPattern = /^\s*<!DOCTYPE|^\s*<html/i;
+                    if (htmlPattern.test(response.data)) {
+                      throw new Error('响应是HTML格式，不是JSON');
+                    }
+                    
+                    // 检查是否看起来像JSON
+                    const trimmedData = response.data.trim();
+                    if (!trimmedData.startsWith('{') && !trimmedData.startsWith('[')) {
+                      throw new Error('响应不是有效的JSON格式');
+                    }
+                    
+                    json = JSON.parse(response.data);
+                  } else {
+                    throw new Error('响应数据类型无效');
+                  }
+                } catch (e) {
+                  if (e instanceof Error && (e.message.includes('响应') || e.message.includes('HTML'))) {
+                    throw e; // 重新抛出我们自定义的错误
+                  }
+                  throw new Error('无法解析响应为JSON格式');
+                }
+                
                 const matches = checkJsonIncludes(json, expected);
                 if (!matches) {
                   throw new Error(`响应JSON不包含期望的值`);
