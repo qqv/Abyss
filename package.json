@@ -52,7 +52,7 @@
     "react-hook-form": "^7.56.3",
     "react-resizable-panels": "^3.0.2",
     "socks-proxy-agent": "^8.0.5",
-    "uuid": "^11.1.0",
+    "uuid": "^14.0.0",
     "zod": "^3.24.4"
   },
   "devDependencies": {
